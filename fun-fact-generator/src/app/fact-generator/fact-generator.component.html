@@ -1,0 +1,20 @@
+<section>
+  <h2 class="sub-title">Here's a fun fact!</h2>
+  <article class="factoid">
+    {{ funFact | async }}
+  </article>
+  <button class="new-fact" (click)="GetNewFact()">Get New Fact!</button>
+</section>
+<section class="previous" *ngIf="previousFacts.length > 0">
+  <h2 class="sub-title">Previous fun facts:</h2>
+  <article class="old">
+    <p class="factoid" *ngFor="let fact of previousFacts; index as i">
+      {{i + 1}}. {{ fact }}
+    </p>
+  </article>
+</section>
+<footer>
+  <span class="copyright">
+    Coding By Chad &copy; {{ copyright }}
+  </span>
+</footer>
